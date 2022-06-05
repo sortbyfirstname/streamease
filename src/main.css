@@ -1,0 +1,528 @@
+/*
+  elm-hot creates an additional div wrapper around the app to make HMR possible.
+  This could break styling in development mode if you are using Elm UI.
+
+  More context in the issue:
+    https://github.com/halfzebra/create-elm-app/issues/320
+*/
+
+[data-elm-hot="true"] {
+  height: inherit;
+}
+
+:root {
+  --bg: rgba(235,255,203,1);
+  --text: rgba(0,0,0,1);
+  --button: rgba(236,90,249,1);
+  --services-bar: rgba(226,203,255,1);
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url(/public/fonts/JetBrainsMono-Regular.woff2);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'JetBrains Mono';
+  src: url(/public/fonts/JetBrainsMono-Bold.woff2);
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* ::-webkit-scrollbar {
+  width: 18px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+  box-shadow: inset 1px 1px 5px 0px rgba(0,0,0,0.4);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #e6e6e6;
+  border: solid 2px black;
+}
+
+::-webkit-scrollbar-button:single-button {
+  background-color: #e6e6e6;
+  display: block;
+  height: 16px;
+  width: 16px;
+  border: solid 2px black;
+} */
+
+body {
+  background-color: var(--bg);
+  width: 100%;
+  height: auto;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'JetBrains Mono', monospace;
+  color: var(--text);
+}
+
+.Navbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  width: 100vw;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+}
+
+#logo {
+  margin-left: 3em;
+}
+
+#logo-alt {
+  display: none;
+}
+
+.NavLinks {
+  margin-top: .5em;
+  margin-right: 3em;
+}
+
+.NavLink {
+  margin-left: 1.5em;
+  text-decoration: none;
+  font-size: 1.6em;
+  color: var(--text);
+}
+
+#hamburger-toggle {
+  display: none;
+}
+
+#hero {
+  margin-top: 3em;
+  margin-left: 3em;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+}
+
+.HeroText {
+  margin-right: -1.5em;
+  text-align: right;
+  font-size: 2.2em;
+  z-index: 1;
+}
+
+#hero-text-top {
+  margin-block-end: 0;
+  white-space: nowrap;
+}
+
+#hero-text-bottom {
+  margin-block-start: 0;
+}
+
+#hero-icon {
+  width: 25vw;
+  margin-bottom: -3em;
+}
+
+.GetStarted {
+  display: flex;
+  margin-top: -15vh;
+  margin-bottom: 4em;
+  margin-left: 22em;
+  align-items: baseline;
+}
+
+#get-started-button {
+  font-size: 2.2vw;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: bold;
+  background-color: var(--button);
+  border: solid 3px var(--text);
+  border-radius: 1vmin;
+  box-shadow: 5px 5px 0 0 black;
+  transform: rotate(3deg);
+  transition: 200ms ease-in-out;
+  cursor: pointer;
+}
+
+  #get-started-button:active {
+    transform: scale(0.9);
+  }
+
+#arrow {
+  transform: scaleX(-1) rotate(303deg);
+  width: 18em;
+  transition: 300ms ease-in-out;
+}
+
+.ServicesBar {
+  display: flex;
+  width: 100vw;
+  justify-content: space-around;
+  align-items:center;
+  padding-top: 3em;
+  padding-bottom: 3em;
+  background-color: var(--services-bar);
+  border-top: solid 3px black;
+  border-bottom: solid 3px black;
+  margin-top: 5em;
+  margin-bottom: 5em;
+}
+
+#service-logos {
+  width: 90%;
+  max-width: 1170px;
+  height: auto;
+}
+
+.Details {
+  display: flex;
+  flex-direction: row;
+  margin-left: 3em;
+  margin-right: 3em;
+}
+
+.LongText {
+  margin: 1em 3em 3em 2em;
+  width: 100vw;
+}
+
+.LongText span {
+  display: block;
+  margin-top: 1em;
+}
+
+.Features {
+  padding-left: 6em;
+  padding-right: 3em;
+  border-left: solid 3px black;
+}
+
+.Feature {
+  background-color: white;
+  border-radius: .75em;
+  border: solid 3px black;
+  box-shadow: 6px 6px 0 0 black;
+  margin-bottom: 2em;
+}
+
+.Feature:last-child {
+  margin-bottom: 0;
+}
+
+.Feature h3 {
+  border-top-left-radius: .5em;
+  border-top-right-radius: .5em;
+  padding: .2em .5em .2em .5em;
+  border-bottom: solid 3px black;
+  margin-block-start: 0;
+}
+
+.Feature:first-child h3 {
+  background-color: rgba(255,244,203,1);
+}
+
+.Feature:last-child h3 {
+  background-color: rgba(255,203,203,1);
+}
+
+.FeatureBody {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1.5em;
+  font-size: 0.9em;
+}
+
+.Feature:last-child .FeatureBody {
+  flex-direction: row-reverse;
+}
+
+.FeatureBody img {
+  margin-left: 1.25em;
+}
+
+.Feature:last-child .FeatureBody img {
+  margin-left: 0;
+  margin-right: 1.25em;
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5em;
+  font-size: 0.8em;
+  margin-bottom: .4em;
+}
+
+#footer-logo {
+  width: 9em;
+  margin-bottom: .25em;
+}
+
+@media screen and (max-width: 360px) {
+  .Navbar {
+    background-color: var(--bg);
+  }
+
+  #logo {
+    height: 2em;
+  }
+
+  .NavLinks {
+    display: none;
+  }
+
+  #hamburger-toggle
+  {
+    display: block;
+    z-index: 2;
+    -webkit-user-select: none;
+    user-select: none;
+    margin-top: -.75em;
+    margin-left: 1em;
+    margin-right: 5vw;
+  }
+
+  #hamburger-toggle a
+  {
+    text-decoration: none;
+    color: black;
+    transition: color 0.3s ease;
+    z-index: 3;
+  }
+
+    #hamburger-toggle a:hover
+    {
+      color: grey;
+    }
+
+
+  #hamburger-toggle input
+  {
+    display: block;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+  }
+  
+  #hamburger-toggle span
+  {
+    display: block;
+    width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: black;
+    z-index: 1;
+    transform-origin: 4px 0px;
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+                opacity 0.55s ease;
+  }
+
+  #hamburger-toggle span:first-child
+  {
+    transform-origin: 0% 0%;
+  }
+
+  #hamburger-toggle span:nth-last-child(2)
+  {
+    transform-origin: 0% 100%;
+  }
+
+  #hamburger-toggle input:checked ~ span
+  {
+    opacity: 1;
+    transform: rotate(45deg) translate(-2px, -1px);
+    background: black;
+  }
+
+  #hamburger-toggle input:checked ~ span:nth-last-child(3)
+  {
+    opacity: 0;
+    transform: rotate(0deg) scale(0.2, 0.2);
+  }
+
+  #hamburger-toggle input:checked ~ span:nth-last-child(2)
+  {
+    transform: rotate(-45deg) translate(0, -1px);
+  }
+
+  #hamburger-list
+  {
+    position: absolute;
+    width: 4.6em;
+    padding: .6em;
+    background: black;
+    color: white;
+    list-style-type: none;
+    transform-origin: 0% 0%;
+    transform: translate(100%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+
+  #hamburger-toggle input:checked ~ ul
+  {
+    transform: translate(-38%, 0);
+  }
+
+  #hero-icon {
+    margin-bottom: -1em !important;
+  }
+
+  .FeatureBody img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  .Navbar {
+    background-color: var(--bg);
+    border-bottom: solid 3px black;
+  }
+
+  #logo {
+    display: none;
+  }
+
+  #logo-alt {
+    display: block;
+    height: 2.75em;
+    margin: 0 .3em .5em .6em;
+  }
+  
+  .NavLinks {
+    margin-top: 0;
+    margin-right: 1em;
+  }
+
+  .NavLink {
+    margin-left: .5em;
+    font-size: 1em;
+  }
+
+  #hero {
+    margin-top: 1em;
+    margin-left: 1em;
+    justify-content: center;
+  }
+
+  .HeroText {
+    margin-right: -1em;
+    text-align: right;
+    font-size: 2.5vw;
+    z-index: 1;
+  }
+
+  .GetStarted {
+    display: flex;
+    margin-top: -8vw;
+    margin-bottom: 4em;
+    margin-left: 18vw;
+    align-items: baseline;
+  }
+
+  #arrow {
+    transform: scaleX(-1) rotate(300deg);
+    width: 25vw;
+  }
+
+  #get-started-button {
+    font-size: 4vw;
+  }
+
+  .ServicesBar {
+    margin-top: 3em;
+    margin-bottom: 3em;
+  }
+
+  .Details {
+    flex-direction: column-reverse;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+
+  .Features {
+    padding-left: 0;
+    padding-right: 0;
+    border-left: none;
+  }
+
+  .Feature {
+    background-color: white;
+    border-radius: .75em;
+    border: solid 3px black;
+    box-shadow: 6px 6px 0 0 black;
+    margin-bottom: 2em;
+  }
+
+  .Feature h3 {
+    border-top-left-radius: .5em;
+    border-top-right-radius: .5em;
+    padding: .2em 0 .2em .5em;
+    border-bottom: solid 3px black;
+    margin-block-start: 0;
+  }
+
+  .Feature:first-child h3 {
+    background-color: rgba(255,244,203,1);
+  }
+
+  .Feature:last-child h3 {
+    background-color: rgba(255,203,203,1);
+  }
+
+  .FeatureBody {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 1.5em;
+    font-size: 0.9em;
+  }
+
+  .Feature:last-child .FeatureBody {
+    flex-direction: row-reverse;
+  }
+
+  .FeatureBody img {
+    margin-left: 1.25em;
+  }
+
+  .Feature:last-child .FeatureBody img {
+    margin-left: 0;
+    margin-right: 1.25em;
+  }
+
+  .LongText {
+    margin: 1em 1em 3em 1em;
+  }
+
+  .LongText span {
+    display: block;
+    margin-top: 1em;
+  }
+}
+
+@media screen and (max-width: 1750px) {
+  .HeroText {
+    font-size: 2.2vw;
+  }
+
+  .GetStarted {
+    margin-top: -8vw;
+    margin-left: 22vw;
+  }
+
+  #arrow {
+    width: 20vw;
+  }
+
+  #get-started-button {
+    font-size: 3vw;
+  }
+}
