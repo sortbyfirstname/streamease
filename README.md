@@ -1,3 +1,18 @@
+# Streamease [concept]
+This is a concept for a fictional streaming service management tool product site, using a neubrutalism design style.
+
+I started this as a concept design made in Figma:
+![Streamease](https://user-images.githubusercontent.com/26223591/172074156-3e28818c-7d41-4c1b-9d76-16fb7a8a0c15.jpg)
+
+Then went on to create this responsive landing page using Elm and CSS:
+Desktop | iPhone 12 Pro | Galaxy Fold
+:---:   | :---:         | :---:
+![image](https://user-images.githubusercontent.com/26223591/172074276-fe43953f-ec1c-443e-bf96-74235e6a9f45.png) | ![image](https://user-images.githubusercontent.com/26223591/172074301-06313846-a1ab-4ce6-b165-6b1f25acefad.png) | ![image](https://user-images.githubusercontent.com/26223591/172074441-71ea2ccd-ba6d-4e5e-9a25-38cda3ec2de4.png)
+
+_This is a work-in-progress, I intend to make all elements of the website functional, as well as design and implement the Price & About pages._ 
+
+---
+
 # Elm App
 
 This project is bootstrapped with [Create Elm App](https://github.com/halfzebra/create-elm-app).
