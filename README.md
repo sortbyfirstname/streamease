@@ -1,4 +1,6 @@
 # Streamease [concept]
+**Published via GitHub Pages - [visit site](https://sortbyfirstname.github.io/streamease/).**
+
 This is a concept for a fictional streaming service management tool product site, using a neubrutalism design style.
 
 I started this as a concept design made in Figma:
@@ -9,7 +11,7 @@ Desktop | iPhone 12 Pro | Galaxy Fold
 :---:   | :---:         | :---:
 ![image](https://user-images.githubusercontent.com/26223591/172074276-fe43953f-ec1c-443e-bf96-74235e6a9f45.png) | ![image](https://user-images.githubusercontent.com/26223591/172074301-06313846-a1ab-4ce6-b165-6b1f25acefad.png) | ![image](https://user-images.githubusercontent.com/26223591/172074441-71ea2ccd-ba6d-4e5e-9a25-38cda3ec2de4.png)
 
-_This is a work-in-progress, I intend to make all elements of the website functional, as well as design and implement the Price & About pages._ 
+_This is a work-in-progress, I intend to make all elements of the website functional, as well as design and implement the Pricing & About pages._ 
 
 ---
 
