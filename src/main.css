@@ -17,19 +17,7 @@
   --services-bar: rgba(226,203,255,1);
 }
 
-@font-face {
-  font-family: 'JetBrains Mono';
-  src: url(/public/fonts/JetBrainsMono-Regular.woff2);
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'JetBrains Mono';
-  src: url(/public/fonts/JetBrainsMono-Bold.woff2);
-  font-weight: bold;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
 /* ::-webkit-scrollbar {
   width: 18px;
@@ -145,6 +133,7 @@ body {
   transform: rotate(3deg);
   transition: 200ms ease-in-out;
   cursor: pointer;
+  color: var(--text);
 }
 
   #get-started-button:active {
