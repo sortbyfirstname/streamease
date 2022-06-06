@@ -17,19 +17,7 @@
   --services-bar: rgba(226,203,255,1);
 }
 
-@font-face {
-  font-family: 'JetBrains Mono';
-  src: url(public/fonts/JetBrainsMono-Regular.woff2);
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'JetBrains Mono';
-  src: url(public/fonts/JetBrainsMono-Bold.woff2);
-  font-weight: bold;
-  font-style: normal;
-}
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
 /* ::-webkit-scrollbar {
   width: 18px;
@@ -187,7 +175,6 @@ body {
 
 .LongText {
   margin: 1em 3em 3em 2em;
-  width: 100vw;
 }
 
 .LongText span {
@@ -199,6 +186,7 @@ body {
   padding-left: 6em;
   padding-right: 3em;
   border-left: solid 3px black;
+  min-width: 35vw;
 }
 
 .Feature {
@@ -381,7 +369,7 @@ body {
   }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 860px) {
   .Navbar {
     background-color: var(--bg);
     border-bottom: solid 3px black;
@@ -393,7 +381,7 @@ body {
 
   #logo-alt {
     display: block;
-    height: 2.75em;
+    height: 2.5em;
     margin: 0 .3em .5em .6em;
   }
   
@@ -404,7 +392,7 @@ body {
 
   .NavLink {
     margin-left: .5em;
-    font-size: 1em;
+    font-size: 1.1em;
   }
 
   #hero {
