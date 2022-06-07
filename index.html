@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link type="text/css" rel="stylesheet" href="src/main.css" />
     <link rel="manifest" href="public/manifest.json">
@@ -5541,7 +5541,10 @@ var $author$project$Main$services = A2(
 var $author$project$Main$view = function (model) {
 	return A2(
 		$elm$html$Html$div,
-		_List_Nil,
+		_List_fromArray(
+			[
+				$elm$html$Html$Attributes$class('Content')
+			]),
 		_List_fromArray(
 			[$author$project$Main$navbar, $author$project$Main$hero, $author$project$Main$getStarted, $author$project$Main$services, $author$project$Main$details, $author$project$Main$footer]));
 };
