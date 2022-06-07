@@ -43,6 +43,10 @@ body {
   color: var(--text);
 }
 
+.Content {
+  overflow-x: hidden;
+}
+
 .Navbar {
   display: flex;
   position: sticky;
@@ -264,7 +268,7 @@ body {
     z-index: 2;
     -webkit-user-select: none;
     user-select: none;
-    margin-top: -.75em;
+    margin-top: .25em;
     margin-left: 1em;
     margin-right: 5vw;
   }
@@ -285,10 +289,15 @@ body {
 
   #hamburger-toggle input
   {
+    position: absolute;
     display: block;
     cursor: pointer;
     opacity: 0;
     z-index: 2;
+    width: 40px;
+    height: 30px;
+    margin-left: -4px;
+    margin-top: -4px;
   }
   
   #hamburger-toggle span
@@ -338,7 +347,7 @@ body {
   {
     position: absolute;
     width: 4.6em;
-    padding: .6em;
+    padding: .6em 1em .6em .6em;
     background: black;
     color: white;
     list-style-type: none;
