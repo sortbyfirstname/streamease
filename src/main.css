@@ -19,7 +19,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap');
 
-/* ::-webkit-scrollbar {
+::-webkit-scrollbar {
   width: 18px;
 }
 
@@ -32,14 +32,6 @@
   background-color: #e6e6e6;
   border: solid 2px black;
 }
-
-::-webkit-scrollbar-button:single-button {
-  background-color: #e6e6e6;
-  display: block;
-  height: 16px;
-  width: 16px;
-  border: solid 2px black;
-} */
 
 body {
   background-color: var(--bg);
@@ -417,6 +409,7 @@ body {
   }
 
   #arrow {
+    margin-top: .5em;
     transform: scaleX(-1) rotate(300deg);
     width: 25vw;
   }
